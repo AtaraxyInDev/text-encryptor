@@ -6,19 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Text Encryptor</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="assets/favicon/favicon.ico" type="image/x-icon">
 </head>
 
-<body>  
+<body>
     <header class="cabezera">
         <div class="logo-titulo">
-            <a class="logotipo" href="https://www.aluracursos.com/"><img src="assets/img/logo-alura.png" alt="Logotipo de alura"></a>
+            <a class="logotipo" href="https://www.aluracursos.com/"><img src="assets/img/logo-alura.png"
+                    alt="Logotipo de alura"></a>
             <h1 class="titulo">Text Encryptor</h1>
         </div>
     </header>
     <main class="cuerpo-principal">
         <div class="contenedor-encriptacion">
-            <input class="input-encriptado" type="text" placeholder="Ingrese aqui un texto para Encriptar"
-                id="campo_encript"></input>
+            <textarea class="input-encriptado"
+            placeholder="Ingrese aquí un texto para encriptar, No se deben usar mayusculas, acentos o algun otro caracter."
+            id="campo_encript"></textarea>
             <p>⚠ Solo letras minúsculas y sin acentos</p>
             <div class="contenedor-btn">
                 <button type="button" class="botones">Encriptar</button>
@@ -26,8 +29,8 @@
             </div>
         </div>
         <div class="contenedor-dencriptacion">
-            <input class="input-desencriptado" type="text" placeholder="Desencriptado" name="texta_desencriptado"
-                id="campo_desencript"></input>
+            <textarea class="input-desencriptado" type="text" placeholder="Desencriptado" name="texta_desencriptado"
+                id="campo_desencript"></textarea>
             <button class="botones">Copiar al Portapapeles</button>
         </div>
         <div class="img-not-found-contenedor">

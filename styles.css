@@ -63,10 +63,12 @@ body {
 }
 
 .input-encriptado {
+    padding-top: 25%;
     font-size: 32px;
     text-align: center;
     width: 100%;
     height: 90%;
+    resize: none;
 }
 
 .contenedor-btn {
@@ -84,11 +86,16 @@ body {
     flex-direction: column;
     background-color: green;
     display: none;
+    align-items: center;
 }
 
 .input-desencriptado {
+    padding-top: 50%;
+    font-size: 32px;
+    text-align: center;
     width: 400px;
     height: 400px;
+    resize: none;
 }
 
 .img-not-found-contenedor{
