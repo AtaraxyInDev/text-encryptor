@@ -1,0 +1,127 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #D8DFE8;
+    height: 100vh;
+    width: 100vw;
+}
+
+/* Header */
+.cabezera {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    height: 5vh; 
+    width: 100%;
+    background-color: rgb(0, 255, 123);
+}
+
+.logo-titulo {
+    display: flex;
+    align-items: center; 
+}
+
+.logo-titulo h1 {
+    font-size: 1.5rem; 
+}
+
+/* Main Content */
+.cuerpo-principal {
+    height: 90%;
+    width: 100%;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: cornflowerblue;
+}
+
+.botones {
+    color: white;
+    border-style: none;
+    background-color: brown;
+    margin: 20px;
+    width: 200px;
+    height: 50px;
+    border-radius: 20px;
+}
+
+/* Encriptacion */
+.contenedor-encriptacion {
+    width: 40%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    background-color: greenyellow;
+    margin-right: 40px;
+}
+
+.input-encriptado {
+    font-size: 32px;
+    text-align: center;
+    width: 100%;
+    height: 90%;
+}
+
+.contenedor-btn {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+    justify-content: space-around;
+}
+
+/* Desencriptacion */
+.contenedor-dencriptacion {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    background-color: green;
+    display: none;
+}
+
+.input-desencriptado {
+    width: 400px;
+    height: 400px;
+}
+
+.img-not-found-contenedor{
+    border-radius: 32px;
+    width: 20%;
+    height: 90%;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid green;
+    background-color: green;
+    align-items: center;
+    justify-content: center;
+    gap: 3%;
+    text-align: center;
+}
+
+.img-not-found-contenedor h2 {
+    font-size: 24px;
+}
+
+.img-not-found-contenedor p {
+    font-size: 16px;
+}
+
+.not-found {
+    width: 90%;
+}
+
+/* Footer */
+.piecera {
+    text-align: center;
+    height: 5vh;
+    border: 2px solid gray;
+    background-color: gray;
+}

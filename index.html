@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Encryptor</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>  
+    <header class="cabezera">
+        <div class="logo-titulo">
+            <a class="logotipo" href="https://www.aluracursos.com/"><img src="assets/img/logo-alura.png" alt="Logotipo de alura"></a>
+            <h1 class="titulo">Text Encryptor</h1>
+        </div>
+    </header>
+    <main class="cuerpo-principal">
+        <div class="contenedor-encriptacion">
+            <input class="input-encriptado" type="text" placeholder="Ingrese aqui un texto para Encriptar"
+                id="campo_encript"></input>
+            <p>⚠ Solo letras minúsculas y sin acentos</p>
+            <div class="contenedor-btn">
+                <button type="button" class="botones">Encriptar</button>
+                <button type="button" class="botones" onclick="ocultar_visuzalizar()">Desencriptar</button>
+            </div>
+        </div>
+        <div class="contenedor-dencriptacion">
+            <input class="input-desencriptado" type="text" placeholder="Desencriptado" name="texta_desencriptado"
+                id="campo_desencript"></input>
+            <button class="botones">Copiar al Portapapeles</button>
+        </div>
+        <div class="img-not-found-contenedor">
+            <img class="not-found" src="assets/img/not-found.png" alt="No se encontro ningun mensaje">
+            <h2>Ningún mensaje fue encontrado</h2>
+            <p>Ingresa el texto que desees encriptar o desencriptar.</p>
+        </div>
+    </main>
+    <footer>
+        <div class="piecera">
+            <h2>Desarrollao po <a href="https://github.com/AtaraxyInDev"><i>@AtaraInDev</i></a></h2>
+        </div>
+    </footer>
+    <script src="app.js"></script>
+</body>
+
+</html>
