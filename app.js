@@ -1,12 +1,41 @@
+// Restricciones de Textarea
 function restricciones(palabra) {
+    const invalidChars = /[^a-z\s]/;
     if (palabra == ``) {
-        alert(`Esta vacio manco`);
         return false;
     }
-
+    
+    if (invalidChars.test(palabra)) {
+        return false; 
+    }
     return true;
 }
 
+// Agregar parpadeo al <p> cuando hay un error
+function aplicarParpadeo() {
+    const mensaje = document.querySelector(".contenedor-encriptacion p");
+    mensaje.classList.add('parpadeo');
+    setTimeout(() => {
+        mensaje.classList.remove('parpadeo');
+    }, 3000); // El parpadeo dura 3 segundos
+}
+
+
+// boton copiar al portapapeles
+function copypaste() {
+    let copy = document.querySelector(".input-desencriptado").value;
+    navigator.clipboard.writeText(copy);
+    
+    // Reiniciar pestana
+    document.querySelector(".input-encriptado").value = ``;
+    document.querySelector(".contenedor-dencriptacion").classList.remove('show');
+    setTimeout(() => {
+        document.querySelector(".contenedor-dencriptacion").style.display = "none";
+        document.querySelector(".img-not-found-contenedor").style.display = "flex";
+    }, 500);
+}
+
+// Funcion de Encriptado
 function encriptar() {
     let textToEncrypt = document.querySelector(".input-encriptado").value;
 
@@ -23,16 +52,21 @@ function encriptar() {
 
     document.querySelector(".input-desencriptado").value = reemplazo;
 
-    /* if (!restricciones(textToEncrypt))
-        return; */
+    if (!restricciones(textToEncrypt))
+        return aplicarParpadeo();
 
-    // Ocultar img y visualizar Desencriptacion
+        // Ocultar img y visualizar Desencriptacion
     document.querySelector(".contenedor-dencriptacion").style.display = "flex";
+    setTimeout(() => {
+        document.querySelector(".contenedor-dencriptacion").classList.add('show');
+    }, 10);
     document.querySelector(".img-not-found-contenedor").style.display = "none";
-}
+    }
 
+    
+// Funcion de Desencriptado
 function desencripta() {
-    let textToDecrypt = document.querySelector(".input-encriptado").value; // Corregido
+    let textToDecrypt = document.querySelector(".input-encriptado").value;
 
     // Objeto de reemplazo para desencriptar
     const desencriptado = {
@@ -51,7 +85,10 @@ function desencripta() {
 
     document.querySelector(".input-desencriptado").value = reemplazo2;
 
-    // Ocultar img y visualizar Desencriptacion
+    //visualizar Desencriptacion
     document.querySelector(".contenedor-dencriptacion").style.display = "flex";
+    setTimeout(() => {
+        document.querySelector(".contenedor-dencriptacion").classList.add('show');
+    }, 10);
     document.querySelector(".img-not-found-contenedor").style.display = "none";
 }

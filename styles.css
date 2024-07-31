@@ -1,11 +1,33 @@
+:root {
+    --color-fondo: #D8DFE8;
+    --color-header: #FFB200;
+    --color-header-hover: #F2A600;
+    --color-boton: #FFB200;
+    --color-boton-hover: #B60071;
+    --color-encriptacion-fondo: #FFF5E1;
+    --color-encriptacion-borde: #FFB200;
+    --color-encriptacion-focus: #B60071;
+    --color-desencriptacion-fondo: #f0e1e5;
+    --color-desencriptacion-borde: #E4003A;
+    --color-desencriptacion-button: #B60071;
+    --color-desencriptacion-button-hover: #FFB200;
+    --color-not-found-fondo: #FFEBEB;
+    --color-not-found-text: #B60071;
+    --color-footer: #B60071;
+    --color-footer-hover: #A00060;
+    --color-footer-text: white;
+    --color-footer-img: #333;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    transition: all 0.3s ease;
 }
 
 body {
-    background-color: #D8DFE8;
+    background-color: var(--color-fondo);
     height: 100vh;
     width: 100vw;
 }
@@ -14,19 +36,30 @@ body {
 .cabezera {
     display: flex;
     align-items: center;
-    justify-content: space-between; 
-    height: 5vh; 
+    justify-content: space-between;
+    height: 5vh;
     width: 100%;
-    background-color: rgb(0, 255, 123);
+    background-color: var(--color-header);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .logo-titulo {
     display: flex;
-    align-items: center; 
+    align-items: center;
 }
 
 .logo-titulo h1 {
-    font-size: 1.5rem; 
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.logo-titulo img {
+    width: 50%;
+    transition: transform 0.3s ease;
+}
+
+.logo-titulo img:hover {
+    transform: scale(1.1);
 }
 
 /* Main Content */
@@ -37,23 +70,32 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: cornflowerblue;
+    background-color: #F2F2F2;
+    transition: background-color 0.3s ease;
+}
+
+.cuerpo-principal:hover {
+    background-color: #e0e0e0;
 }
 
 .botones {
     color: white;
     border-style: none;
-    background-color: #a52a2a;
+    background-color: var(--color-boton);
     margin: 20px;
     width: 200px;
     height: 50px;
     border-radius: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .botones:hover {
-    background-color: #562727 ;
+    background-color: var(--color-boton-hover);
     cursor: pointer;
+    transform: scale(1.05);
 }
+
 /* Encriptacion */
 .contenedor-encriptacion {
     width: 40%;
@@ -62,26 +104,50 @@ body {
     flex-direction: column;
     align-items: center;
     padding: 15px;
-    background-color: greenyellow;
+    background-color: var(--color-encriptacion-fondo);
     margin-right: 40px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.contenedor-encriptacion:hover {
+    transform: scale(1.02);
 }
 
 .input-encriptado {
-    padding-top: 25%;
+    padding: 12.5%;
     font-size: 32px;
     text-align: center;
     width: 100%;
     height: 90%;
     resize: none;
+    border: 2px solid var(--color-encriptacion-borde);
+    outline: none;
+    transition: border-color 0.3s ease;
 }
 
-.contenedor-btn {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    padding: 20px;
-    justify-content: space-around;
+.input-encriptado:focus {
+    border-color: var(--color-encriptacion-focus);
 }
+
+.contenedor-encriptacion p {
+    padding-top: 5%;
+    font-size: 14px;
+    color: #333;
+}
+
+/* Parpadeo si el usuario hizo algo mal */
+
+@keyframes parpadeo {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.parpadeo {
+    animation: parpadeo 0.5s linear infinite;
+}
+
 
 /* Desencriptacion */
 .contenedor-dencriptacion {
@@ -91,8 +157,16 @@ body {
     flex-direction: column;
     align-items: center;
     padding: 15px;
-    background-color: green;
+    background-color: var(--color-desencriptacion-fondo);
     margin-right: 40px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out, transform 0.3s ease;
+}
+
+.contenedor-dencriptacion.show {
+    display: flex;
+    opacity: 1;
+    transform: scale(1.02);
 }
 
 .input-desencriptado {
@@ -102,30 +176,56 @@ body {
     width: 100%;
     height: 90%;
     resize: none;
+    border: 2px solid var(--color-desencriptacion-borde);
+    transition: border-color 0.3s ease;
 }
 
-.img-not-found-contenedor{
+.input-desencriptado:focus {
+    border-color: var(--color-desencriptacion-button-hover);
+}
+
+.contenedor-dencriptacion button:hover {
+    background-color: var(--color-desencriptacion-button-hover);
+}
+
+.contenedor-dencriptacion button {
+    background-color: var(--color-desencriptacion-button);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.contenedor-dencriptacion button:hover {
+    transform: scale(1.05);
+}
+
+.img-not-found-contenedor {
     border-radius: 32px;
     width: 20%;
     height: 90%;
     padding: 15px;
     display: flex;
     flex-direction: column;
-    border: 2px solid green;
-    background-color: green;
+    background-color: var(--color-not-found-fondo);
     align-items: center;
     justify-content: center;
     gap: 3%;
     text-align: center;
-    display: flex;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out, transform 0.3s ease;
+}
+
+.img-not-found-contenedor.hide {
+    opacity: 0;
+    transform: scale(0.95);
 }
 
 .img-not-found-contenedor h2 {
     font-size: 24px;
+    color: var(--color-not-found-text);
 }
 
 .img-not-found-contenedor p {
     font-size: 16px;
+    color: var(--color-not-found-text);
 }
 
 .not-found {
@@ -137,5 +237,30 @@ body {
     text-align: center;
     height: 5vh;
     border: 2px solid gray;
-    background-color: gray;
+    background-color: var(--color-footer);
+    color: var(--color-footer-text);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.piecera:hover {
+    background-color: var(--color-footer-hover);
+}
+
+.piecera img {
+    width: 30px;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+.piecera a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.piecera a:hover {
+    text-decoration: underline;
 }

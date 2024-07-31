@@ -12,16 +12,15 @@
 <body>
     <header class="cabezera">
         <div class="logo-titulo">
-            <a class="logotipo" href="https://www.aluracursos.com/"><img src="assets/img/logo-alura.png"
-                    alt="Logotipo de alura"></a>
+            <a href="https://www.aluracursos.com/"><img src="assets/img/logo-alura.png" alt="Logotipo de alura"></a>
             <h1 class="titulo">Text Encryptor</h1>
         </div>
     </header>
     <main class="cuerpo-principal">
         <div class="contenedor-encriptacion">
             <textarea id="textarea-encriptado" class="input-encriptado"
-            placeholder="Ingrese aquí un texto para encriptar, No se deben usar mayusculas, acentos o algun otro caracter."
-            id="campo_encript"></textarea>
+                placeholder="Ingrese aquí un texto para encriptar o desencriptar. No se deben usar mayusculas, acentos o algun otro caracter."
+                id="campo_encript"></textarea>
             <p>⚠ Solo letras minúsculas y sin acentos</p>
             <div class="contenedor-btn">
                 <button type="button" onclick="encriptar()" class="botones">Encriptar</button>
@@ -31,7 +30,7 @@
         <div class="contenedor-dencriptacion">
             <textarea class="input-desencriptado" type="text" placeholder="Desencriptado" name="texta_desencriptado"
                 id="campo_desencript"></textarea>
-            <button class="botones">Copiar al Portapapeles</button>
+            <button onclick="copypaste()" class="botones">Copiar al Portapapeles</button>
         </div>
         <div class="img-not-found-contenedor">
             <img class="not-found" src="assets/img/not-found.png" alt="No se encontro ningun mensaje">
@@ -41,7 +40,9 @@
     </main>
     <footer>
         <div class="piecera">
-            <h2>Desarrollao po <a href="https://github.com/AtaraxyInDev"><i>@AtaraInDev</i></a></h2>
+            <a href="https://github.com/AtaraxyInDev"> <img src="https://github.com/AtaraxyInDev.png"
+                    alt="Perfil de GitHub"></a>
+            <h2>Desarrollao por <a href="https://github.com/AtaraxyInDev"><i>@AtaraInDev</i></a></h2>
         </div>
     </footer>
     <script src="app.js"></script>
