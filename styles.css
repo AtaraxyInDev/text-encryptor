@@ -38,7 +38,7 @@ body {
     align-items: center;
     justify-content: space-between;
     height: 5vh;
-    width: 100%;
+    width: 100vw;
     background-color: var(--color-header);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -76,6 +76,12 @@ body {
 
 .cuerpo-principal:hover {
     background-color: #e0e0e0;
+}
+
+.contenedor-btn {
+    display: flex;
+    width: 80%;
+    height: 20%;
 }
 
 .botones {
@@ -236,6 +242,7 @@ body {
 .piecera {
     text-align: center;
     height: 5vh;
+    width: 100vw;
     border: 2px solid gray;
     background-color: var(--color-footer);
     color: var(--color-footer-text);
@@ -263,4 +270,100 @@ body {
 
 .piecera a:hover {
     text-decoration: underline;
+}
+
+/* Responsive / Media Query */
+
+@media (max-width: 800px) {
+
+    .body {
+        width: 100%;
+        height: 100%;
+    }
+
+    .cuerpo-principal {
+        flex-direction: column;
+    }
+
+    .contenedor-encriptacion, .contenedor-dencriptacion {
+        width: 80%;
+        margin: 10%;
+    }
+
+    .img-not-found-contenedor {
+        width: 60%;
+    }
+}
+
+/* Dispositivos móviles de 600px */
+@media (max-width: 600px) {
+    .cabezera {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .logo-titulo h1 {
+        font-size: 1.2rem;
+    }
+
+    .logo-titulo img {
+        width: 40%;
+    }
+
+    .cuerpo-principal {
+        padding: 10px;
+    }
+
+    .botones {
+        width: 150px;
+        height: 40px;
+        margin: 15px;
+    }
+
+    .contenedor-encriptacion, .contenedor-dencriptacion {
+        width: 90%;
+        height: auto;
+        padding: 10px;
+    }
+
+    .input-encriptado, .input-desencriptado {
+        font-size: 24px;
+        padding: 10%;
+    }
+
+    .img-not-found-contenedor {
+        width: 80%;
+        padding: 10px;
+    }
+}
+
+/* Dispositivos móviles de 400px */
+@media (max-width: 400px) {
+    .logo-titulo h1 {
+        font-size: 1rem;
+    }
+
+    .logo-titulo img {
+        width: 30%;
+    }
+
+    .botones {
+        width: 120px;
+        height: 35px;
+        margin: 10px;
+    }
+
+    .contenedor-encriptacion, .contenedor-dencriptacion {
+        width: 95%;
+        padding: 5px;
+    }
+
+    .input-encriptado, .input-desencriptado {
+        font-size: 18px;
+        padding: 5%;
+    }
+
+    .img-not-found-contenedor {
+        width: 90%;
+    }
 }
