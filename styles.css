@@ -447,7 +447,7 @@ body {
     }
 
     .img-not-found-contenedor h2, p {
-        font-size: 2.3rem;
+        font-size: 1.8rem;
     }
 
     .not-found {
@@ -555,5 +555,11 @@ body {
         height: 5vh;
         width: 100vw;
         border-radius: 0 0 10px 10px;
+    }
+}
+
+@media (max-width: 414px) {
+    .img-not-found-contenedor h2, p{
+        font-size: 1.2rem;
     }
 }
