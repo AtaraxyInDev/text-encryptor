@@ -1,12 +1,33 @@
-// Restricciones de Textarea
+// Funcion para texto 
+function asignarTextoConParametros(elemento, texto) {
+    let elementoHtml = document.querySelector(elemento);
+    elementoHtml.innerHTML = texto;
+}
+
+// Restricciones/validacion de encriptacion
 function restricciones(palabra) {
     const invalidChars = /[^a-z\s]/;
     if (palabra == ``) {
+        asignarTextoConParametros(`#restriccion`, `⚠ Debes rellenar el campo primero`);
         return false;
     }
-    
     if (invalidChars.test(palabra)) {
-        return false; 
+        asignarTextoConParametros(`#restriccion`, `⚠ Solo letras minúsculas y sin acentos`);
+        return false;
+    }
+    return true;
+}
+
+// restriccion Desencriptado
+function restriccionesDesencriptacion(palabra) {
+    const invalidChars = /[^a-z\s]/;
+    if (palabra == ``) {
+        asignarTextoConParametros(`#restriccion`, `⚠ Debes rellenar el campo primero`);
+        return false;
+    }
+    if (invalidChars.test(palabra)) {
+        asignarTextoConParametros(`#restriccion`, `⚠ Solo letras minúsculas y sin acentos`);
+        return false;
     }
     return true;
 }
@@ -25,7 +46,6 @@ function aplicarParpadeo() {
 function copypaste() {
     let copy = document.querySelector(".input-desencriptado").value;
     navigator.clipboard.writeText(copy);
-    
     // Reiniciar pestana
     document.querySelector(".input-encriptado").value = ``;
     document.querySelector(".contenedor-dencriptacion").classList.remove('show');
@@ -38,7 +58,6 @@ function copypaste() {
 // Funcion de Encriptado
 function encriptar() {
     let textToEncrypt = document.querySelector(".input-encriptado").value;
-
     const cifrado = {
         'a': 'ai',
         'e': 'enter',
@@ -55,15 +74,14 @@ function encriptar() {
     if (!restricciones(textToEncrypt))
         return aplicarParpadeo();
 
-        // Ocultar img y visualizar Desencriptacion
+    // Ocultar img y visualizar Desencriptacion
     document.querySelector(".contenedor-dencriptacion").style.display = "flex";
     setTimeout(() => {
         document.querySelector(".contenedor-dencriptacion").classList.add('show');
     }, 10);
     document.querySelector(".img-not-found-contenedor").style.display = "none";
-    }
+}
 
-    
 // Funcion de Desencriptado
 function desencripta() {
     let textToDecrypt = document.querySelector(".input-encriptado").value;
@@ -84,6 +102,10 @@ function desencripta() {
     let reemplazo2 = textToDecrypt.replace(regex, match => desencriptado[match]);
 
     document.querySelector(".input-desencriptado").value = reemplazo2;
+
+    //Restriccion 
+    if (!restriccionesDesencriptacion(textToDecrypt))
+        return aplicarParpadeo();
 
     //visualizar Desencriptacion
     document.querySelector(".contenedor-dencriptacion").style.display = "flex";

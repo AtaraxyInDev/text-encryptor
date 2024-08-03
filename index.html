@@ -19,12 +19,12 @@
     <main class="cuerpo-principal">
         <div class="contenedor-encriptacion">
             <textarea id="textarea-encriptado" class="input-encriptado"
-                placeholder="Ingrese aquí un texto para encriptar o desencriptar."
-                id="campo_encript"></textarea>
-            <p>⚠ Solo letras minúsculas y sin acentos</p>
+                placeholder="Ingrese aquí un texto para encriptar o desencriptar." id="campo_encript"></textarea>
+            <p id="restriccion">⚠ Solo letras minúsculas y sin acentos</p>
             <div class="contenedor-btn">
                 <button type="button" onclick="encriptar()" class="botones">Encriptar</button>
-                <button type="button" class="botones" onclick="desencripta()">Desencriptar</button>
+                <button id="btnDesencriptado" type="button" class="botones"
+                    onclick="desencripta()">Desencriptar</button>
             </div>
         </div>
         <div class="contenedor-dencriptacion">
