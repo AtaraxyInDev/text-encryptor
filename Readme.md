@@ -21,4 +21,4 @@ Text Encryptor es una aplicación web sencilla para encriptar y desencriptar tex
 
 1. **Clona el repositorio**:
    ```bash
-   git clone https://github.com/AtaraxInDev/text-encryptor.git
+   git clone https://github.com/AtaraxyInDev/text-encryptor.git
