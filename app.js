@@ -86,6 +86,13 @@ function encriptar() {
 function desencripta() {
     let textToDecrypt = document.querySelector(".input-encriptado").value;
 
+    if (!/(enter|imes|ai|ober|ufat)/.test(palabraIngresada)) {
+        alert('No se debe desencriptar');
+    };
+        
+        return;
+    }
+
     // Objeto de reemplazo para desencriptar
     const desencriptado = {
         'ai': 'a',
