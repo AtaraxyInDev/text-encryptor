@@ -20,11 +20,21 @@ function restricciones(palabra) {
 
 // restriccion Desencriptado
 function restriccionesDesencriptacion(palabra) {
+
+    // Si esta vacio 
     const invalidChars = /[^a-z\s]/;
     if (palabra == ``) {
         asignarTextoConParametros(`#restriccion`, `⚠ Debes rellenar el campo primero`);
         return false;
     }
+
+    // Si no tiene caracteres a desencriptar
+    if (!/(enter|imes|ai|ober|ufat)/.test(palabra)) {
+        asignarTextoConParametros(`#restriccion`, `⚠ No es necesario desencriptar esta palabra`);
+        return false;
+    };
+
+    // Si tiene caracteres no validos
     if (invalidChars.test(palabra)) {
         asignarTextoConParametros(`#restriccion`, `⚠ Solo letras minúsculas y sin acentos`);
         return false;
@@ -85,13 +95,6 @@ function encriptar() {
 // Funcion de Desencriptado
 function desencripta() {
     let textToDecrypt = document.querySelector(".input-encriptado").value;
-
-    if (!/(enter|imes|ai|ober|ufat)/.test(palabraIngresada)) {
-        alert('No se debe desencriptar');
-    };
-        
-        return;
-    }
 
     // Objeto de reemplazo para desencriptar
     const desencriptado = {
